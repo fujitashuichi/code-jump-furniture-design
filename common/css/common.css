@@ -6,7 +6,79 @@
     box-sizing: border-box;
 }
 
-.page-container {
+body {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.page-wrapper {
     max-width: 1360px;
     padding: 0 40px;
+}
+
+
+/* header.html */
+
+#header {
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    width: 180px;
+    line-height: 1px;
+}
+
+#nav {
+    display: none;
+}
+
+#header .toggle-btn {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#header .toggle-btn span {
+    display: block;
+    position: absolute;
+    width: 30px;
+    border: 1px solid #000;
+}
+
+#header .toggle-btn span:first-child {
+    top: 10px;
+}
+
+#header .toggle-btn span:last-child {
+    bottom: 10px;
+}
+
+#mask {
+    display: none;
+}
+
+#mask.open {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
