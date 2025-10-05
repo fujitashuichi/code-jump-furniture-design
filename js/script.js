@@ -5,18 +5,17 @@ fetch("./common/html/header.html")
         try {
             const parser = new DOMParser();
             const dom = parser.parseFromString(data, "text/html");
-            document.getElementById("header").innerHTML = dom;
-        } catch {(e) => {
+            document.getElementById("header").innerHTML = dom.body.innerHTML;
+
+            const toggleBtn = document.querySelector(".toggle-btn");
+            const mask = document.getElementById("mask");
+
+            if (toggleBtn && mask) {
+                toggleBtn.addEventListener("click", () => {
+                    mask.classList.toggle("open");
+                });
+            }
+        } catch (e) {
             console.error(e);
-        }};
+        };
     });
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById(".toggle-btn");
-    console.log(toggleBtn);
-    const mask = document.getElementById("mask");
-    toggleBtn.addEventListener("click", () => {
-        mask.classList.toggle("open");
-    });
-});
