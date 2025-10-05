@@ -45,11 +45,7 @@ a {
     line-height: 1px;
 }
 
-#nav {
-    display: none;
-}
-
-#header .toggle-btn {
+.toggle-btn {
     position: relative;
     width: 30px;
     height: 30px;
@@ -57,29 +53,71 @@ a {
     z-index: 10;
 }
 
-#header .toggle-btn span {
+.toggle-btn span {
     display: block;
     position: absolute;
     width: 30px;
     border: 1px solid #000;
 }
 
-#header .toggle-btn span:first-child {
+.toggle-btn.open span {
+    border: 1px solid #fff;
+}
+
+.toggle-btn span:first-child {
     top: 10px;
 }
 
-#header .toggle-btn span:last-child {
+.toggle-btn.open span:first-child {
+    top: 14.5px;
+    transform: rotateZ(-45deg);
+}
+
+.toggle-btn span:last-child {
     bottom: 10px;
 }
 
+.toggle-btn.open span:last-child {
+    bottom: 14.5px;
+    transform: rotateZ(45deg);
+}
+
+#nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100vh;
+    transition: all 0.3s;
+}
+
+#nav.open {
+    top: 0;
+    left: 0;
+    padding: 10% 0 0 5%;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
+
+#nav ul li {
+    margin-bottom: 15px;
+}
+
+#nav ul li a {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
 #mask {
-    display: none;
+    position: fixed;
+    transition: all 0.3s;
 }
 
 #mask.open {
-    display: block;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
 }
