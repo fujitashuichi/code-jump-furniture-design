@@ -31,10 +31,6 @@ a {
     padding: 0 40px;
 }
 
-.product-list {
-    display: grid;
-}
-
 
 /* header.html */
 
@@ -125,4 +121,17 @@ a {
     height: 100vh;
     background: rgba(0, 0, 0, 0.5);
     z-index: 5;
+}
+
+
+/* product-list */
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.product-list li img {
+    aspect-ratio: 1;
 }

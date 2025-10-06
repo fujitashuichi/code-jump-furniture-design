@@ -1,41 +1,66 @@
 // key -> 商品名, value -> 画像のパス
-const items = {
-    item1: "/img/item1.jpg",
-    item2: "/img/item2.jpg",
-    item3: "/img/item3.jpg",
-    item4: "/img/item4.jpg",
-    item5: "/img/item5.jpg",
-    item6: "/img/item6.jpg",
-    item7: "/img/item8.jpg",
-    item9: "/img/item9.jpg",
-    item10: "/img/item10.jpg",
-    item11: "/img/item11.jpg",
-    item12: "/img/item12.jpg",
-    item13: "/img/item13.jpg",
-    item14: "/img/item14.jpg",
-    item15: "/img/item15.jpg",
-    item16: "/img/item16.jpg"
-};
+const items = [
+    {name: "item1", img: "/img/item1.jpg", price: 99999},
+    {name: "item2", img: "/img/item2.jpg", price: 99999},
+    {name: "item3", img: "/img/item3.jpg", price: 99999},
+    {name: "item4", img: "/img/item4.jpg", price: 99999},
+    {name: "item5", img: "/img/item5.jpg", price: 99999},
+    {name: "item6", img: "/img/item6.jpg", price: 99999},
+    {name: "item7", img: "/img/item7.jpg", price: 99999},
+    {name: "item8", img: "/img/item8.jpg", price: 99999},
+    {name: "item9", img: "/img/item9.jpg", price: 99999},
+    {name: "item10", img: "/img/item10.jpg", price: 99999},
+    {name: "item11", img: "/img/item11.jpg", price: 99999},
+    {name: "item12", img: "/img/item12.jpg", price: 99999},
+    {name: "item13", img: "/img/item13.jpg", price: 99999},
+    {name: "item14", img: "/img/item14.jpg", price: 99999},
+    {name: "item15", img: "/img/item15.jpg", price: 99999},
+    {name: "item16", img: "/img/item16.jpg", price: 99999}
+];
 
 
 function insertItems() {
+    const currentPath = window.location.pathname;
+    if (currentPath.includes("/index.html")) {
+        const elements = createItemElements(0, 8);
+        insertElements(elements);
+    } else if (currentPath.includes("/pages/item")) {
+        const fileName = currentPath.split("/").pop();
+        const first = (fileName.match(/¥d+/) - 1) * 8;  // そのページにおける最初のitemのインデックスを算出した式
+        const elements = createItemElements(first, 12);
+        insertElements(elements);
+    }
+}
+
+
+// first番目から num個のエレメントを生成し、リストで返す
+function createItemElements(first, num) {
     let elements = [];
     const parser = new DOMParser();
-    Object.keys(items).forEach(key => {
-        const text =
-        `
+    num += first;
+    for (let i = first; i < num; i++) {
+        const item = items[i];
+        const text = `
             <li>
-                <a href="/pages/${key}.html">
-                    <img src="${items[key]}" alt="${key}" />
+                <a href="/pages/${item.name}.html">
+                    <img src="${item.img}" alt="${item.name}" />
+                    <p class="item-name">${item.name}</p>
+                    <p class="item-price">${item.price}</p>
                 </a>
             </li>
         `
 
+        // エレメントをDOMツリー情報に変換
         const element = parser.parseFromString(text, "text/html");
+
         elements.push(element);
-    });
+    };
+
+    return elements;
+}
 
 
+function insertElements(elements) {
     const list = document.querySelector(".product-list");
     elements.forEach(element => {
         list.insertAdjacentHTML("beforeend", element.body.innerHTML);
