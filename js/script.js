@@ -1,5 +1,7 @@
-// コンポーネントの挿入
-fetch("./common/html/header.html")
+// コンポーネントの挿入 //
+
+// header
+fetch("/common/html/header.html")
     .then (response => response.text())
     .then (data => {
         try {
