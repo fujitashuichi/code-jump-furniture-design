@@ -1,3 +1,5 @@
+import { insertItems } from "./productListManager.js";
+
 // コンポーネントの挿入 //
 
 // header
@@ -22,3 +24,8 @@ fetch("/common/html/header.html")
             console.error(e);
         };
     });
+
+// product-list
+if (document.querySelector(".product-list")) {
+    insertItems();
+}

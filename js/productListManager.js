@@ -18,24 +18,29 @@ const items = {
 };
 
 
-let elements = [];
-const parser = new DOMParser();
-Object.keys(items).forEach(key => {
-    const text =
-    `
-        <li>
-            <a href="/pages/${key}.html">
-                <img src="${items[key]}" alt="${key}" />
-            </a>
-        </li>
-    `
+function insertItems() {
+    let elements = [];
+    const parser = new DOMParser();
+    Object.keys(items).forEach(key => {
+        const text =
+        `
+            <li>
+                <a href="/pages/${key}.html">
+                    <img src="${items[key]}" alt="${key}" />
+                </a>
+            </li>
+        `
 
-    const element = parser.parseFromString(text, "text/html");
-    elements.push(element);
-});
+        const element = parser.parseFromString(text, "text/html");
+        elements.push(element);
+    });
 
 
-const list = document.querySelector(".product-list");
-elements.forEach(element => {
-    list.insertAdjacentHTML("beforeend", element.body.innerHTML);
-});
+    const list = document.querySelector(".product-list");
+    elements.forEach(element => {
+        list.insertAdjacentHTML("beforeend", element.body.innerHTML);
+    });
+}
+
+
+export { insertItems };
