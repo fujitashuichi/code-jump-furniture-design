@@ -21,6 +21,7 @@ ul {
 }
 
 a {
+    display: block;
     text-decoration: none;
     color: #000;
 }
@@ -134,4 +135,26 @@ a {
 
 .product-list li img {
     aspect-ratio: 1;
+}
+
+
+/* footer */
+
+#footer {
+    display: flex;
+    padding: 15px 0;
+}
+
+#sns {
+    display: flex;
+}
+
+#sns li {
+    margin-right: 30px;
+    font-size: 0.8rem;
+}
+
+#copy-right {
+    margin: auto 0 auto auto;
+    font-size: 0.75rem;
 }

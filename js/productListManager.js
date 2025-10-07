@@ -33,7 +33,7 @@ function insertItems() {
 }
 
 
-// first番目から num個のエレメントを生成し、リストで返す
+// first番目以降のnum個のエレメントを生成し、リストで返す
 function createItemElements(first, num) {
     let elements = [];
     const parser = new DOMParser();
