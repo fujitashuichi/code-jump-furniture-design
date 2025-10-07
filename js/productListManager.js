@@ -7,11 +7,9 @@ function insertItems() {
         const elements = createItemElements(0, 8);
         insertElements(elements);
     } else if (currentPath.includes("/pages/products")) {
-        return; // 一時的に機能停止
-        const fileName = currentPath.split("/").pop();
-        const first = (fileName.match(/¥d+/) - 1) * 8;  // そのページにおける最初のitemのインデックスを算出した式
-        console.log(first);
-        const elements = createItemElements(first, 12);
+        const first = (document.title.match(/\d+/) - 1) * 12;
+        const num = Math.min(products.length - first, 12);  // 最後のページで12個表示できないときのため
+        const elements = createItemElements(first, num);
         insertElements(elements);
     }
 }
@@ -29,7 +27,7 @@ function createItemElements(first, num) {
                 <a href="/pages/${item.name}.html">
                     <img src="${item.img}" alt="${item.name}" />
                     <p class="item-name">${item.name}</p>
-                    <p class="item-price">${item.price}</p>
+                    <p class="item-price">¥${item.price} +tax</p>
                 </a>
             </li>
         `
@@ -46,6 +44,7 @@ function createItemElements(first, num) {
 
 function insertElements(elements) {
     const list = document.querySelector(".product-list");
+    list.innerHTML = "<!-- ↓inserted by JavaScript -->";
     elements.forEach(element => {
         list.insertAdjacentHTML("beforeend", element.body.innerHTML);
     });
