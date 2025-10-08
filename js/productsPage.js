@@ -1,4 +1,5 @@
 import { products } from "./productData.js";
+import { jumpToItemPage } from "./productJumpManager.js";
 import { insertItems } from "./productListManager.js";
 
 const lastPageNum = Math.ceil(products.length / 12);  // 最後尾のページ番号を算出
@@ -92,5 +93,12 @@ function onClickPageLink(event) {
     document.querySelectorAll(".nav-link-btn").forEach(btn => {
         btn.removeEventListener("click", onClickPageLink);
         btn.addEventListener("click", (event) => onClickPageLink(event));
+    });
+    document.querySelectorAll(".item").forEach(item => {
+        item.removeEventListener("click", jumpToItemPage);
+        item.addEventListener("click", (event) => {
+            const item_id = event.target.id;
+            jumpToItemPage(item_id);
+        });
     });
 }

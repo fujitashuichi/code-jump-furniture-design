@@ -6,4 +6,5 @@
     width: fit-content;
     margin: 0 auto 40px auto;
     font-size: 1rem;
+    cursor: pointer;
 }

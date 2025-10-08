@@ -23,6 +23,7 @@ fetch("/common/html/header.html")
             });
         } catch (e) {
             console.error(e);
+            console.error("header tag not found");
         };
     });
 
@@ -41,5 +42,6 @@ fetch("/common/html/footer.html")
             document.getElementById("footer").innerHTML = dom.body.innerHTML;
         } catch (e) {
             console.error(e);
+            console.error("footer tag not found");
         }
     });

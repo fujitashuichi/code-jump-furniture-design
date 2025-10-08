@@ -1,12 +1,56 @@
 const products = [
-    {name: "item1", img: "/img/item1.jpg", price: 99999},
-    {name: "item2", img: "/img/item2.jpg", price: 99999},
-    {name: "item3", img: "/img/item3.jpg", price: 99999},
-    {name: "item4", img: "/img/item4.jpg", price: 99999},
-    {name: "item5", img: "/img/item5.jpg", price: 99999},
-    {name: "item6", img: "/img/item6.jpg", price: 99999},
-    {name: "item7", img: "/img/item7.jpg", price: 99999},
-    {name: "item8", img: "/img/item8.jpg", price: 99999},
+    {
+        name: "椅子", img: "/img/item1.jpg", price: 99999,
+        texts: [
+            "テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト",
+            "テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキスト テキストテキストテキストテキスト"
+        ],
+        details: {
+            SIZE: "W999 × D999 × H999",
+            COLOR: "テキスト",
+            MATERIAL: "テキストテキストテキスト"
+        }
+    },
+    {
+        name: "ソファ", img: "/img/item2.jpg", price: 99999,
+        texts: [
+            "text",
+            "text"
+        ],
+        details: {
+            SIZE: "size",
+            COLOR: "color",
+            MATERIAL: "material"
+        }
+    },
+    {
+        name: "テーブル", img: "/img/item3.jpg", price: 99999,
+        texts: [
+            "text",
+            "text"
+        ],
+        details: {
+            SIZE: "size",
+            COLOR: "color",
+            MATERIAL: "material"
+        }
+    },
+    {
+        name: "スタンドライト", img: "/img/item4.jpg", price: 99999,
+        texts: [
+            "text",
+            "text"
+        ],
+        details: {
+            SIZE: "size",
+            COLOR: "color",
+            MATERIAL: "material"
+        }
+    },
+    {name: "ソファ", img: "/img/item5.jpg", price: 99999},
+    {name: "ベッドサイドランプ・観葉植物", img: "/img/item6.jpg", price: 99999},
+    {name: "ワークデスク", img: "/img/item7.jpg", price: 99999},
+    {name: "単色壁紙", img: "/img/item8.jpg", price: 99999},
     {name: "item9", img: "/img/item9.jpg", price: 99999},
     {name: "item10", img: "/img/item10.jpg", price: 99999},
     {name: "item11", img: "/img/item11.jpg", price: 99999},

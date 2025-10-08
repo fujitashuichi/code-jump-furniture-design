@@ -13,3 +13,7 @@
 #nav-link-num li button.current {
     color: blue;
 }
+
+.item {
+    cursor: pointer;
+}

@@ -23,12 +23,10 @@ function createItemElements(first, num) {
     for (let i = first; i < num; i++) {
         const item = products[i];
         const text = `
-            <li>
-                <a href="/pages/${item.name}.html">
-                    <img src="${item.img}" alt="${item.name}" />
-                    <p class="item-name">${item.name}</p>
-                    <p class="item-price">¥${item.price} +tax</p>
-                </a>
+            <li id="item-${i}" class="item">
+                <img src="${item.img}" alt="${item.name}" />
+                <p class="item-name">${item.name}</p>
+                <p class="item-price">¥${item.price} +tax</p>
             </li>
         `
 

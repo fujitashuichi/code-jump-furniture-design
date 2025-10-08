@@ -138,6 +138,10 @@ a {
     aspect-ratio: 1;
 }
 
+.item * {
+    pointer-events: none;
+}
+
 
 /* footer */
 
