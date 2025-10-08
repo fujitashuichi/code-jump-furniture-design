@@ -1,3 +1,15 @@
-.current {
+.nav-links {
+    display: flex;
+    width: fit-content;
+    column-gap: 40px;
+    margin: 0 auto 100px auto;
+}
+
+.nav-links #nav-link-num {
+    display: flex;
+    column-gap: 40px;
+}
+
+#nav-link-num li button.current {
     color: blue;
 }
