@@ -47,9 +47,15 @@ function createListChildren() {
 
     let elements = [];
     btnIds.forEach(id => {
+        // 現在のページ番号にcurrentクラスを付与
+        let newClass = "";
+        if (id === currentPageNum) {
+            newClass = "current";
+        }
+
         const text = `
             <li>
-                <button id="${id}" class="nav-link-btn">${id}</button>
+                <button id="${id}" class="nav-link-btn ${newClass}">${id}</button>
             </li>
         `
 
