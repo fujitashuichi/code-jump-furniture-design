@@ -170,6 +170,7 @@ button {
 
 #footer {
     display: flex;
+    flex-wrap: wrap;
     padding: 15px 0;
 }
 
@@ -185,4 +186,16 @@ button {
 #copy-right {
     margin: auto 0 auto auto;
     font-size: 0.75rem;
+}
+
+
+@media screen and (max-width: 900px) {
+    .product-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #copy-right {
+        margin: 0;
+        padding-left: 10px;
+    }
 }

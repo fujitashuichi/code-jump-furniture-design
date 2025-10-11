@@ -17,3 +17,15 @@
 .item {
     cursor: pointer;
 }
+
+
+@media screen and (max-width: 320px) {
+    .nav-links {
+        font-size: 0.75rem;
+        column-gap: 15px;
+    }
+
+    .nav-links #nav-link-num {
+        column-gap: 15px;
+    }
+}
