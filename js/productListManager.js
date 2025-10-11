@@ -26,7 +26,7 @@ function createItemElements(first, num) {
             <li id="item-${i}" class="item">
                 <img src="${item.img}" alt="${item.name}" />
                 <p class="item-name">${item.name}</p>
-                <p class="item-price">¥${item.price} +tax</p>
+                <p class="item-price">${item.price}</p>
             </li>
         `
 

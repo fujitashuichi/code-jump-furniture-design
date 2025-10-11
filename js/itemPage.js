@@ -9,29 +9,38 @@ const item = products[itemId];
 
 document.title = item.name;
 
-
-const strings = item.texts.map(string =>
-    `<p>${string}</p>`
-);
+let strings = [];
+if (item.texts && item.texts.length > 0) {
+    strings = item.texts.map(string =>
+        `<p>${string}</p>`
+    );
+} else {
+    strings = ["<p>詳細情報はありません</p>", "<p>No details to show</p>"];
+}
 
 let details = [];
 for(const key in item.details) {
     details.push(`
-            <dt>${key}</dt>
+            <dt>${key}<span>:</span></dt>
             <dd>${item.details[key]}</dd>
         `);
 }
 
 const text = `
     <h2 class="item-title">${item.name}</h2>
-    <div class="img-wrapper">
-        <img src="${item.img}"></img>
-    </div>
-    <div class="text-wrapper">
-        ${strings.join("\n")}
-        <dl>
-            ${details.join("\n")}
-        </dl>
+    <div class="flex">
+        <div class="img-wrapper">
+            <img src="${item.img}"></img>
+        </div>
+        <div class="text-wrapper">
+            ${strings.join("\n")}
+            <p id="price">
+                ${item.price}
+            </p>
+            <dl id="details">
+                ${details.join("\n")}
+            </dl>
+        </div>
     </div>
 `
 
