@@ -45,3 +45,13 @@ fetch("/common/html/footer.html")
             console.error("footer tag not found");
         }
     });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    // コンテントが少ないときのfooter位置調整 //
+    const header = document.getElementById("header");
+    const main = document.querySelector("main");
+    const footer = document.getElementById("footer");
+
+    main.style.minHeight = `${window.innerHeight - header.offsetHeight - footer.offsetHeight - 20}px`;
+})

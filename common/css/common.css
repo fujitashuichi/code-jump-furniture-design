@@ -134,6 +134,14 @@ button {
 }
 
 
+/* content */
+.page-title {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+
 /* product-list */
 
 .product-list {

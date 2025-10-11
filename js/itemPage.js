@@ -27,7 +27,7 @@ for(const key in item.details) {
 }
 
 const text = `
-    <h2 class="item-title">${item.name}</h2>
+    <h2 class="page-title">${item.name}</h2>
     <div class="flex">
         <div class="img-wrapper">
             <img src="${item.img}"></img>
